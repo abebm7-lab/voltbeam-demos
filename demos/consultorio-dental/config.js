@@ -91,8 +91,8 @@ window.SITE_CONFIG = {
 
     avisoDemo: {
       numero: "524761900495",   // WhatsApp de VoltBeam (no cambia)
-      texto: "Demo creada por VoltBeam.",
-      enlaceTexto: "Quiero una así para mi negocio",
+      texto: "Esta es una demo creada por VoltBeam.",
+      enlaceTexto: "Quiero una así",
       mensaje: "Hola VoltBeam, vi la demo del consultorio dental y quiero algo así para mi negocio."
     },
 
@@ -116,7 +116,7 @@ window.SITE_CONFIG = {
         titulo: "Agenda tu cita",
         tratamientos: ["Valoración general", "Limpieza dental", "Blanqueamiento", "Ortodoncia", "Resinas", "Otro"],
         dias: ["Hoy", "Mañana", "Esta semana", "Sábado"],
-        turnos: ["mañana", "tarde"],
+        turnos: ["Mañana", "Tarde"],
         boton: "Pedir cita por WhatsApp",
         nota: "Te confirmamos la hora exacta por WhatsApp."
       },

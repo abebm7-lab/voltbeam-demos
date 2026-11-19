@@ -50,8 +50,8 @@
     '<div class="bg-texto text-white text-sm">' +
       '<div class="mx-auto max-w-6xl px-5 sm:px-8 py-2.5 flex items-center gap-3">' +
         '<a href="../../" class="inline-flex items-center gap-1.5 opacity-80 hover:opacity-100 shrink-0" aria-label="Volver a VoltBeam"><i data-lucide="arrow-left" class="w-4 h-4"></i><span class="hidden sm:inline">VoltBeam</span></a>' +
-        '<p class="flex-1 truncate opacity-90">' + e(s.texto) + "</p>" +
-        '<a href="' + e(VB.waUrl(s.numero, s.mensaje)) + '" target="_blank" rel="noopener" data-origen="aviso-demo" class="shrink-0 font-semibold underline underline-offset-4">' + e(s.enlaceTexto) + "</a>" +
+        '<p class="hidden sm:block flex-1 truncate opacity-90">' + e(s.texto) + "</p>" +
+        '<a href="' + e(VB.waUrl(s.numero, s.mensaje)) + '" target="_blank" rel="noopener" data-origen="aviso-demo" class="ml-auto truncate font-semibold underline underline-offset-4">' + e(s.enlaceTexto) + "</a>" +
       "</div>" +
     "</div>";
 
@@ -72,7 +72,7 @@
       '<fieldset class="mt-5"><legend class="text-sm font-semibold text-textoSuave">' + etiqueta + '</legend><div class="mt-2 flex flex-wrap gap-2">' +
         valores.map((v, i) =>
           '<label class="cursor-pointer"><input type="radio" name="' + nombre + '" value="' + e(v) + '" class="peer sr-only"' + (i === 0 ? " checked" : "") + '>' +
-          '<span class="inline-block rounded-xl border border-linea bg-superficie px-4 py-2.5 text-[15px] font-medium capitalize peer-checked:border-acento peer-checked:bg-acentoSuave peer-checked:text-acento peer-focus-visible:ring-2 peer-focus-visible:ring-acento transition">' + e(v) + "</span></label>").join("") +
+          '<span class="inline-block rounded-xl border border-linea bg-superficie px-4 py-2.5 text-[15px] font-medium peer-checked:border-acento peer-checked:bg-acentoSuave peer-checked:text-acento peer-focus-visible:ring-2 peer-focus-visible:ring-acento transition">' + e(v) + "</span></label>").join("") +
       "</div></fieldset>";
     return '<section class="px-5 sm:px-8 pt-10 pb-14 sm:pt-16 sm:pb-24">' +
       '<div class="mx-auto max-w-6xl grid lg:grid-cols-[1.1fr_.9fr] gap-10 lg:gap-14 items-center">' +
@@ -99,7 +99,7 @@
 
   R.confianza = (s) =>
     '<section class="px-5 sm:px-8"><div class="mx-auto max-w-6xl grid grid-cols-2 lg:grid-cols-4 gap-px bg-linea border border-linea rounded-2xl overflow-hidden">' +
-      s.puntos.map((p) => '<div class="bg-superficie p-5 flex items-center gap-3"><i data-lucide="' + e(p.icono) + '" class="w-5 h-5 text-acento shrink-0"></i><span class="text-[15px] font-medium leading-snug">' + e(p.texto) + "</span></div>").join("") +
+      s.puntos.map((p) => '<div class="bg-superficie p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 min-w-0"><i data-lucide="' + e(p.icono) + '" class="w-5 h-5 text-acento shrink-0"></i><span class="text-[15px] font-medium leading-snug break-words">' + e(p.texto) + "</span></div>").join("") +
     "</div></section>";
 
   R.tratamientos = (s) => wrap("tratamientos",
@@ -228,6 +228,7 @@
       const d = Object.fromEntries(new FormData(agenda).entries());
       d.tratamiento = d.tratamiento.toLowerCase();
       d.dia = d.dia.toLowerCase();
+      d.turno = d.turno.toLowerCase();
       VB.openWA(NUM, VB.fill(M.cita, d), "agenda");
     });
   }
