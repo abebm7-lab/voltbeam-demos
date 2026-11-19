@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- ============================================================
+       VISTA PREVIA AL COMPARTIR (WhatsApp / Facebook)
+       Estas líneas SÍ se editan aquí: esas apps no leen config.js.
+       og:image y og:url deben ser URLs completas (https://...).
+       ============================================================ -->
+  <title>VoltBeam | Páginas web y asistentes de IA en WhatsApp · León</title>
+  <meta name="description" content="Páginas web y asistentes de inteligencia artificial que contestan WhatsApp, cotizan y agendan citas 24/7 para negocios de León, Guanajuato.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:title" content="VoltBeam | Tu negocio contesta WhatsApp aunque tú estés dormido">
+  <meta property="og:description" content="Páginas web y asistentes de IA que responden, cotizan y agendan por WhatsApp 24/7. León, Gto.">
+  <meta property="og:url" content="https://abebm7-lab.github.io/voltbeam-demos/">
+  <meta property="og:image" content="https://abebm7-lab.github.io/voltbeam-demos/assets/og-voltbeam.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#000000">
+
+  <link rel="icon" type="image/png" href="./assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
+
+  <!-- Tipografías: Poppins (la del logo) para títulos, Inter para texto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS (CDN, sin compilar) -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    // Los colores vienen de config.js como variables CSS (--c-*)
+    const c = (n) => `rgb(var(--c-${n}) / <alpha-value>)`;
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            fondo: c("fondo"), superficie: c("superficie"), linea: c("linea"),
+            acento: c("acento"), acentoSuave: c("acentoSuave"),
+            texto: c("texto"), textoSuave: c("textoSuave")
+          },
+          fontFamily: {
+            display: ["Poppins", "system-ui", "sans-serif"],
+            sans: ["Inter", "system-ui", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Fondo inmediato para que no se vea un destello blanco al cargar */
+    html { background: #000; color: #F5F4F0; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    body { opacity: 0; transition: opacity .25s ease; }
+    body.listo { opacity: 1; }
+    [id] { scroll-margin-top: 80px; }
+    :focus-visible { outline: 2px solid rgb(var(--c-acento)); outline-offset: 3px; border-radius: 6px; }
+    input[type=range] { accent-color: rgb(var(--c-acento)); }
+    .triangulo { clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+  </style>
+</head>
+<body class="bg-fondo text-texto font-sans antialiased">
+  <noscript><p style="padding:2rem;font-family:sans-serif">Activa JavaScript para ver esta página, o escríbenos por WhatsApp al 476 190 0495.</p></noscript>
+
+  <!-- Todo el contenido se genera desde config.js -->
+  <div id="app"></div>
+
+  <!-- Orden importante: iconos, config, núcleo y al final la página -->
+  <script src="https://unpkg.com/lucide@1.75.0/dist/umd/lucide.min.js"></script>
+  <script src="./config.js"></script>
+  <script src="./bot.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

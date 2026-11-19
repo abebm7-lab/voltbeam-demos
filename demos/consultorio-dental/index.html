@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- ============================================================
+       VISTA PREVIA AL COMPARTIR (WhatsApp / Facebook)
+       Edita estas líneas al clonar: esas apps no leen config.js.
+       og:url y og:image deben ser URLs completas (https://...).
+       ============================================================ -->
+  <title>Clínica Dental Alba | Dentista en León, Gto.</title>
+  <meta name="description" content="Limpieza, blanqueamiento, resinas, ortodoncia y urgencias el mismo día en León. Agenda tu cita por WhatsApp en un minuto.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:title" content="Clínica Dental Alba | Agenda tu cita en 1 minuto">
+  <meta property="og:description" content="Dentista en León. Precios claros, urgencias el mismo día y citas por WhatsApp.">
+  <meta property="og:url" content="https://abebm7-lab.github.io/voltbeam-demos/demos/consultorio-dental/">
+  <meta property="og:image" content="https://abebm7-lab.github.io/voltbeam-demos/assets/og-demo-dental.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0F7C7A">
+  <!-- Mientras sea demo, que Google no la indexe. Bórralo al entregar. -->
+  <meta name="robots" content="noindex">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230F7C7A'/%3E%3Cpath d='M20 36c3 5 7 8 12 8s9-3 12-8' stroke='white' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='24' cy='25' r='3.5' fill='white'/%3E%3Ccircle cx='40' cy='25' r='3.5' fill='white'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    const c = (n) => `rgb(var(--c-${n}) / <alpha-value>)`;
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            fondo: c("fondo"), superficie: c("superficie"), linea: c("linea"),
+            acento: c("acento"), acentoSuave: c("acentoSuave"),
+            texto: c("texto"), textoSuave: c("textoSuave")
+          },
+          fontFamily: { sans: ["'Plus Jakarta Sans'", "system-ui", "sans-serif"] }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html { background: #F5F8F8; color: #0E2A2E; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    body { opacity: 0; transition: opacity .25s ease; }
+    body.listo { opacity: 1; }
+    [id] { scroll-margin-top: 84px; }
+    :focus-visible { outline: 2px solid rgb(var(--c-acento)); outline-offset: 3px; border-radius: 8px; }
+  </style>
+</head>
+<body class="bg-fondo text-texto font-sans antialiased">
+  <noscript><p style="padding:2rem;font-family:sans-serif">Activa JavaScript para ver esta página.</p></noscript>
+  <div id="app"></div>
+
+  <!-- Todos los archivos son locales a esta carpeta: puedes copiarla completa -->
+  <script src="https://unpkg.com/lucide@1.75.0/dist/umd/lucide.min.js"></script>
+  <script src="./config.js"></script>
+  <script src="./bot.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
