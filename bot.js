@@ -18,7 +18,7 @@
   VB.fill = (tpl, vars) => String(tpl ?? "").replace(/\{(\w+)\}/g, (_, k) => (vars && vars[k] != null ? vars[k] : ""));
 
   VB.waUrl = (numero, mensaje) =>
-    "https://wa.me/" + String(numero).replace(/\D/g, "") + (mensaje ? "?text=" + encodeURIComponent(mensaje.replace(/\s+/g, " ").trim()) : "");
+    "https://wa.me/" + String(numero).replace(/\D/g, "") + (mensaje ? "?text=" + encodeURIComponent(String(mensaje).replace(/[ \t]+/g, " ").replace(/ *\n */g, "\n").trim()) : "");
 
   VB.openWA = (numero, mensaje, origen) => {
     VB.track("whatsapp_click", { origen: origen || "general" });
@@ -93,6 +93,7 @@
   .vbchat .vb-typing i{width:7px;height:7px;border-radius:50%;background:var(--wa-sub);animation:vbdot 1.1s infinite}
   .vbchat .vb-typing i:nth-child(2){animation-delay:.15s}.vbchat .vb-typing i:nth-child(3){animation-delay:.3s}
   @keyframes vbdot{0%,60%,100%{opacity:.35;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
+  .vb-launcher{transition:bottom .25s ease,filter .15s,transform .1s}
   .vb-pop{animation:vbpop .22s ease-out both}
   @keyframes vbpop{from{opacity:0;transform:translateY(6px) scale(.98)}to{opacity:1;transform:none}}
   .vb-panel{transform-origin:bottom right;transition:opacity .2s ease,transform .2s ease}
@@ -164,7 +165,7 @@
     // Botón flotante
     const launcher = document.createElement("button");
     launcher.type = "button";
-    launcher.className = "fixed z-[60] bottom-4 right-4 sm:bottom-6 sm:right-6 flex items-center gap-2 rounded-full bg-[#25D366] text-[#06331a] font-semibold shadow-[0_10px_30px_-8px_rgba(37,211,102,.6)] pl-4 pr-5 h-14 hover:brightness-105 active:scale-[.98] transition focus:outline-none focus-visible:ring-4 focus-visible:ring-[#25D366]/40";
+    launcher.className = "vb-launcher fixed z-[60] bottom-4 right-4 sm:bottom-6 sm:right-6 flex items-center gap-2 rounded-full bg-[#25D366] text-[#06331a] font-semibold shadow-[0_10px_30px_-8px_rgba(37,211,102,.6)] pl-4 pr-5 h-14 hover:brightness-105 active:scale-[.98] transition focus:outline-none focus-visible:ring-4 focus-visible:ring-[#25D366]/40";
     launcher.setAttribute("aria-haspopup", "dialog");
     launcher.setAttribute("aria-expanded", "false");
     launcher.innerHTML = '<i data-lucide="message-circle" class="w-6 h-6"></i><span class="text-[15px]">' + VB.esc(cfg.textoBoton || "Probar asistente") + "</span>";
@@ -238,6 +239,7 @@
             const url = VB.fill(op.url, vars);
             VB.track("bot_link", { url: url });
             if (/^https?:/i.test(url)) window.open(url, "_blank", "noopener");
+            else if (url.charAt(0) === "#") { cerrar(); setTimeout(() => { const d = document.querySelector(url); if (d) d.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" }); }, 50); }
             else window.location.href = url;
             return;
           }

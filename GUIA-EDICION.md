@@ -10,19 +10,25 @@ voltbeam-demos/
 ├── app.js              ← diseño de las secciones (no hace falta tocarlo)
 ├── bot.js              ← simulador de WhatsApp, analítica, utilidades (no tocar)
 ├── assets/             ← logo, favicon, imágenes para compartir
-└── demos/
-    └── consultorio-dental/   ← plantilla autocontenida (se copia completa)
-        ├── index.html
-        ├── config.js
-        ├── app.js
-        └── bot.js
+└── demos/                ← cada carpeta es autocontenida (se copia completa)
+    ├── consultorio-dental/   claro y amable: mini agenda, tratamientos, asistente de citas
+    ├── restaurante/          menú con carrito → pedido por WhatsApp, abierto/cerrado,
+    │                         promo del día, reservaciones
+    └── taller-mecanico/      cotizador, diagnóstico por síntoma, calculadora de
+                              mantenimiento, seguimiento por folio
+        (cada una: index.html, config.js, app.js, bot.js)
 ```
+
+**¿Cuál duplicar?** Usa la que más se parezca en *funciones* al cliente, no en giro.
+Una estética o un veterinario se parecen al dental (citas). Una cafetería o una pastelería,
+al restaurante (catálogo con carrito). Un servicio técnico de celulares o de clima, al taller
+(cotizador y seguimiento).
 
 ---
 
 ## 1. Crear un cliente nuevo en menos de 15 minutos
 
-1. **Duplica la carpeta** `demos/consultorio-dental/` y renómbrala, por ejemplo `demos/dental-sonrisa-leon/`.
+1. **Duplica la carpeta** de la plantilla más parecida (ej. `demos/consultorio-dental/`) y renómbrala, por ejemplo `demos/dental-sonrisa-leon/`.
    Usa minúsculas, sin acentos ni espacios (eso será la URL).
    - En GitHub web: no se pueden copiar carpetas. Lo más fácil es desde tu computadora (GitHub Desktop o VS Code), o pídeme a mí que lo haga.
 2. **Abre `config.js` de la nueva carpeta** y cambia, en este orden:
@@ -40,7 +46,9 @@ voltbeam-demos/
 ### Al entregar al cliente (ya no es demo)
 - `modoDemo: false` en su `config.js`. Eso oculta la barra "Demo creada por VoltBeam" y la etiqueta "Ejemplo" de los testimonios.
 - Borra la línea `<meta name="robots" content="noindex">` de su `index.html` para que Google sí la indexe.
-- Sustituye los **testimonios y precios de ejemplo** por los reales, o apágalos. No publiques testimonios inventados para un negocio real.
+- Sustituye los **testimonios, precios y datos de ejemplo** por los reales, o apágalos. No publiques testimonios inventados para un negocio real.
+- Taller: la sección **"Estado de tu auto"** usa folios de ejemplo. Para un cliente real apágala (`seguimiento.activo: false`) hasta conectarla a su sistema de órdenes.
+- Restaurante: revisa que el **horario** (formato 24 h) sea el real; de ahí sale el aviso de "Abierto/Cerrado".
 - Si el cliente tendrá su propio dominio, copia la carpeta a un repositorio nuevo: es autocontenida y funciona igual.
 
 ---

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- ============================================================
+       VISTA PREVIA AL COMPARTIR (WhatsApp / Facebook)
+       Edita estas líneas al clonar: esas apps no leen config.js.
+       ============================================================ -->
+  <title>Comal 47 | Antojitos y comida mexicana en León</title>
+  <meta name="description" content="Pide tacos, enchiladas mineras y más por WhatsApp en dos toques. Reservaciones y promo del día. Zona Centro, León.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:title" content="Comal 47 | Pide tus antojos en dos toques">
+  <meta property="og:description" content="Menú, pedidos por WhatsApp, reservaciones y promo del día.">
+  <meta property="og:url" content="https://abebm7-lab.github.io/voltbeam-demos/demos/restaurante/">
+  <meta property="og:image" content="https://abebm7-lab.github.io/voltbeam-demos/assets/og-demo-restaurante.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#D6006F">
+  <!-- Mientras sea demo, que Google no la indexe. Bórralo al entregar. -->
+  <meta name="robots" content="noindex">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23D6006F'/%3E%3Ctext x='32' y='44' font-family='Arial' font-weight='900' font-size='30' text-anchor='middle' fill='%23FFC83D'%3E47%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    const c = (n) => `rgb(var(--c-${n}) / <alpha-value>)`;
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            fondo: c("fondo"), superficie: c("superficie"), linea: c("linea"),
+            acento: c("acento"), acentoSuave: c("acentoSuave"),
+            texto: c("texto"), textoSuave: c("textoSuave")
+          },
+          fontFamily: { sans: ["'Bricolage Grotesque'", "system-ui", "sans-serif"] }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html { background: #fff; color: #1B1320; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    body { opacity: 0; transition: opacity .25s ease; }
+    body.listo { opacity: 1; }
+    [id] { scroll-margin-top: 128px; }
+    :focus-visible { outline: 2px solid rgb(var(--c-acento)); outline-offset: 3px; border-radius: 10px; }
+    .sin-barra { scrollbar-width: none; } .sin-barra::-webkit-scrollbar { display: none; }
+    body.carrito-activo .vb-launcher { bottom: 6rem; }
+    .hoja { transition: transform .28s cubic-bezier(.2,.8,.2,1), opacity .2s; }
+    .hoja[data-open="false"] { transform: translateY(100%); opacity: 0; pointer-events: none; visibility: hidden; }
+    .velo { transition: opacity .2s; }
+    .velo[data-open="false"] { opacity: 0; pointer-events: none; visibility: hidden; }
+    @media (prefers-reduced-motion: reduce) { .hoja, .velo { transition: none; } }
+  </style>
+</head>
+<body class="bg-fondo text-texto font-sans antialiased">
+  <noscript><p style="padding:2rem;font-family:sans-serif">Activa JavaScript para ver el menú.</p></noscript>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/lucide@1.75.0/dist/umd/lucide.min.js"></script>
+  <script src="./config.js"></script>
+  <script src="./bot.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

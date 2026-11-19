@@ -197,7 +197,7 @@ window.SITE_CONFIG = {
     demos: {
       activo: true,
       titulo: "Pruébalo antes de decidir",
-      subtitulo: "Demos reales que puedes abrir en tu celular. Cada una trae su propio asistente.",
+      subtitulo: "Tres giros, tres estilos distintos. Ábrelas en tu celular: cada una trae sus propias herramientas y su asistente.",
       botonBot: "Probar el asistente de VoltBeam",
       lista: [
         {
@@ -211,18 +211,18 @@ window.SITE_CONFIG = {
         {
           activo: true,
           nombre: "Restaurante",
-          descripcion: "Menú, pedidos para llevar y reservaciones desde WhatsApp.",
-          url: "",               // vacío = "Próximamente"
+          descripcion: "Menú con carrito que manda el pedido a WhatsApp, promo del día y reservaciones.",
+          url: "./demos/restaurante/",   // vacío = "Próximamente"
           icono: "utensils",
-          etiqueta: "Próximamente"
+          etiqueta: "Disponible"
         },
         {
           activo: true,
           nombre: "Taller mecánico",
-          descripcion: "Cotizaciones de servicio y citas de diagnóstico sin llamadas.",
-          url: "",
+          descripcion: "Cotizador en línea, diagnóstico por síntoma y seguimiento de la reparación.",
+          url: "./demos/taller-mecanico/",
           icono: "wrench",
-          etiqueta: "Próximamente"
+          etiqueta: "Disponible"
         }
       ]
     },
@@ -418,10 +418,12 @@ window.SITE_CONFIG = {
       viendo: {
         mensajes: [
           "Va, sin presión 🙂",
-          "Si quieres ver un caso completo, abre la demo del consultorio dental: trae su propio asistente para agendar citas."
+          "Si quieres ver casos completos, abre alguna demo: cada una trae su propio asistente."
         ],
         opciones: [
-          { texto: "Abrir demo dental", url: "./demos/consultorio-dental/" },
+          { texto: "Demo dental", url: "./demos/consultorio-dental/" },
+          { texto: "Demo restaurante", url: "./demos/restaurante/" },
+          { texto: "Demo taller", url: "./demos/taller-mecanico/" },
           { texto: "Mejor sí quiero mi prueba", ir: "nombre", guardar: "interes", valor: "Quiero mi prueba gratis" }
         ]
       },

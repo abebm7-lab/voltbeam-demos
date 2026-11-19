@@ -257,11 +257,11 @@ window.SITE_CONFIG = {
       tratamiento: {
         mensajes: ["Con gusto. ¿Qué tratamiento te interesa?"],
         opciones: [
-          { texto: "Valoración general", ir: "primeraVez", guardar: "tratamiento" },
-          { texto: "Limpieza dental",    ir: "primeraVez", guardar: "tratamiento" },
-          { texto: "Blanqueamiento",     ir: "primeraVez", guardar: "tratamiento" },
-          { texto: "Ortodoncia",         ir: "primeraVez", guardar: "tratamiento" },
-          { texto: "Otro",               ir: "primeraVez", guardar: "tratamiento", valor: "Valoración general" }
+          { texto: "Valoración general", ir: "primeraVez", guardar: "tratamiento", valor: "valoración general" },
+          { texto: "Limpieza dental",    ir: "primeraVez", guardar: "tratamiento", valor: "limpieza dental" },
+          { texto: "Blanqueamiento",     ir: "primeraVez", guardar: "tratamiento", valor: "blanqueamiento" },
+          { texto: "Ortodoncia",         ir: "primeraVez", guardar: "tratamiento", valor: "ortodoncia" },
+          { texto: "Otro",               ir: "primeraVez", guardar: "tratamiento", valor: "valoración general" }
         ]
       },
       primeraVez: {
@@ -274,10 +274,10 @@ window.SITE_CONFIG = {
       dia: {
         mensajes: ["Perfecto. ¿Qué día te acomoda?"],
         opciones: [
-          { texto: "Hoy",         ir: "turno", guardar: "dia" },
-          { texto: "Mañana",      ir: "turno", guardar: "dia" },
-          { texto: "Esta semana", ir: "turno", guardar: "dia" },
-          { texto: "Sábado",      ir: "turno", guardar: "dia" }
+          { texto: "Hoy",         ir: "turno", guardar: "dia", valor: "hoy" },
+          { texto: "Mañana",      ir: "turno", guardar: "dia", valor: "mañana" },
+          { texto: "Esta semana", ir: "turno", guardar: "dia", valor: "esta semana" },
+          { texto: "Sábado",      ir: "turno", guardar: "dia", valor: "el sábado" }
         ]
       },
       turno: {
@@ -331,7 +331,7 @@ window.SITE_CONFIG = {
           "El costo final te lo damos por escrito en tu valoración, antes de empezar."
         ],
         opciones: [
-          { texto: "Agendar valoración", ir: "primeraVez", guardar: "tratamiento", valor: "Valoración general" },
+          { texto: "Agendar valoración", ir: "primeraVez", guardar: "tratamiento", valor: "valoración general" },
           { texto: "Ver otra cosa",      ir: "inicio" }
         ]
       },

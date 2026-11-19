@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- ============================================================
+       VISTA PREVIA AL COMPARTIR (WhatsApp / Facebook)
+       Edita estas líneas al clonar: esas apps no leen config.js.
+       ============================================================ -->
+  <title>MotorLab León | Taller mecánico, cotiza en línea</title>
+  <meta name="description" content="Cotiza tu servicio en línea, revisa qué tiene tu auto por el síntoma y sigue tu reparación desde el celular. Taller mecánico en León.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:title" content="MotorLab León | Sabes cuánto cuesta antes de dejar tu auto">
+  <meta property="og:description" content="Cotizador en línea, diagnóstico por síntoma y seguimiento de tu reparación.">
+  <meta property="og:url" content="https://abebm7-lab.github.io/voltbeam-demos/demos/taller-mecanico/">
+  <meta property="og:image" content="https://abebm7-lab.github.io/voltbeam-demos/assets/og-demo-taller.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#15181C">
+  <!-- Mientras sea demo, que Google no la indexe. Bórralo al entregar. -->
+  <meta name="robots" content="noindex">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2315181C'/%3E%3Crect x='10' y='40' width='44' height='8' fill='%23FF5B14'/%3E%3Ctext x='32' y='34' font-family='Arial' font-weight='900' font-size='24' text-anchor='middle' fill='white'%3EML%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    const c = (n) => `rgb(var(--c-${n}) / <alpha-value>)`;
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            fondo: c("fondo"), superficie: c("superficie"), linea: c("linea"),
+            acento: c("acento"), acentoSuave: c("acentoSuave"),
+            texto: c("texto"), textoSuave: c("textoSuave")
+          },
+          fontFamily: {
+            display: ["'Barlow Condensed'", "system-ui", "sans-serif"],
+            sans: ["Barlow", "system-ui", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html { background: #ECEEF0; color: #15181C; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    body { opacity: 0; transition: opacity .25s ease; }
+    body.listo { opacity: 1; }
+    [id] { scroll-margin-top: 76px; }
+    :focus-visible { outline: 3px solid rgb(var(--c-acento)); outline-offset: 2px; }
+    /* Franja de precaución */
+    .franja { background: repeating-linear-gradient(-45deg, rgb(var(--c-acento)) 0 14px, rgb(var(--c-texto)) 14px 28px); }
+    input[type=number]::-webkit-inner-spin-button { opacity: .4; }
+  </style>
+</head>
+<body class="bg-fondo text-texto font-sans antialiased">
+  <noscript><p style="padding:2rem;font-family:sans-serif">Activa JavaScript para usar el cotizador.</p></noscript>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/lucide@1.75.0/dist/umd/lucide.min.js"></script>
+  <script src="./config.js"></script>
+  <script src="./bot.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
