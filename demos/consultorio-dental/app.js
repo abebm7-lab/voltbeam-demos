@@ -50,8 +50,8 @@
     '<div class="bg-texto text-white text-sm">' +
       '<div class="mx-auto max-w-6xl px-5 sm:px-8 py-2.5 flex items-center gap-3">' +
         '<a href="../../" class="inline-flex items-center gap-1.5 opacity-80 hover:opacity-100 shrink-0" aria-label="Volver a VoltBeam"><i data-lucide="arrow-left" class="w-4 h-4"></i><span class="hidden sm:inline">VoltBeam</span></a>' +
-        '<p class="hidden sm:block flex-1 truncate opacity-90">' + e(s.texto) + "</p>" +
-        '<a href="' + e(VB.waUrl(s.numero, s.mensaje)) + '" target="_blank" rel="noopener" data-origen="aviso-demo" class="ml-auto truncate font-semibold underline underline-offset-4">' + e(s.enlaceTexto) + "</a>" +
+        '<p class="flex-1 truncate opacity-90"><span class="sm:hidden">Demo VoltBeam</span><span class="hidden sm:inline">' + e(s.texto) + "</span></p>" +
+        '<a href="' + e(VB.waUrl(s.numero, s.mensaje)) + '" target="_blank" rel="noopener" data-origen="aviso-demo" class="shrink-0 font-semibold underline underline-offset-4">' + e(s.enlaceTexto) + "</a>" +
       "</div>" +
     "</div>";
 

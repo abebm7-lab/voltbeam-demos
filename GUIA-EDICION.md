@@ -93,7 +93,7 @@ Prueba siempre el recorrido completo después de editar. Si un botón no hace na
   Excepción: `og:image` y `og:url` en el `<head>` sí van con la URL completa `https://...`, porque así lo exige WhatsApp/Facebook.
 - En `config.js` cambia solo lo que está entre comillas y los `true`/`false`. Si la página sale en blanco, casi siempre falta o sobra una coma o comilla. Abre la consola del navegador (F12) y ahí dice la línea.
 - `bot.js` es el mismo archivo en la raíz y en cada plantilla. Si lo mejoras, cópialo a todas las carpetas.
-- Después de subir, si no ves el cambio, recarga sin caché (en celular, abre el link en una pestaña de incógnito).
+- Después de subir, GitHub tarda 1–2 minutos en publicar y el navegador puede seguir mostrando los `.js` anteriores hasta 10 minutos. Para revisar al momento, ábrelo en una pestaña de incógnito.
 
 ---
 
